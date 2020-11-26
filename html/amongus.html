@@ -1,0 +1,418 @@
+<!DOCTYOE html>
+<html>
+<head>
+<title>Among Us</title>
+<style>
+	body{
+		margin:0;
+		height:100vh;
+		justify-content:center;
+		align-items:center;
+		background-color:#eee;
+		display:flex;
+		}
+	.character{position:relative;}
+		
+	.character::after{
+			content:' ';
+			position:absolute;
+			width:500px;height:100px;
+			background-color:#bebebe;
+			border-radius:50%;
+			bottom:-20px;
+			z-index:-1;
+			left:50%;
+			transform:translateX(-50%);
+			}
+			
+	.body{
+			position:relative;
+			width:240px;height:360px;
+			border:25px solid #000;
+			border-bottom:none;
+			border-radius:35% 45% 0% 0%;
+			background-color:#b33e15;
+			overflow:hidden;
+			}
+	.body::before{
+			content:' ';
+			position:absolute;
+			width:100px;height:90px;
+			background-color:#ef7d0d;
+			border-radius:10% 10% 32% 39% / 0% 10% 30% 100%;
+			}
+			
+	.glass{
+			position:absolute;
+			width:200px;height:110px;
+			background-color:#4a646d;
+			border:25px solid #000;
+			right: -40px;
+            top:76px;
+			transform:rotate(-2deg);
+			border-radius:25% 45% 40% 40%/50%;
+			overflow:hidden;
+			}
+	.glass::before{
+			content:" ";
+			position:absolute;
+			right:0;
+			width:90px; height:85;
+			background:#94c9db;
+			border-radius:10% 10% 27% 39% / 0% 10% 20% 100%;
+			}
+			
+		.hand{
+		    position:absolute;
+		    height:70px;
+		    width:70px;
+		    background-color:#b33e15;
+		    border:25px solid #000;
+		    border-top:none;
+		    top:230px;
+		    left:30px;
+		    border-radius:0 0 50% 50%;
+		    
+		}
+			
+	.white-reflection{
+			position:absolute;
+			width:110px;height:40px;
+			background-color:#fff;
+			transform:rotate(2deg);
+			top:12px; right:26px;
+			border-radius:30% 100% 30% 100%/ 100% 90% 90% 100%;
+			}
+			
+         .legs{
+			display:flex;
+			justify-content:space-between;
+			}
+		.left-leg{
+			width:80px;height:110px;
+			background:#b33e15;
+			border:25px solid #000;
+			border-top:none;
+			border-radius:0% 0% 40% 40%;
+			position:relative;
+			}
+            .right-leg{
+			position:relative;
+			width:80px;height:100px;
+			background:#b33e15;
+			border:25px solid #000;
+			border-top:none;
+			border-radius:0% 0% 40% 40%;
+			}
+			
+		.left-leg::before{
+			content:" ";
+			position:absolute;
+			width:100px;height:25px;
+			background-color:#000;
+			left:100px;
+			border-radius:0% 0% 100% 0%;
+			}
+			
+		.bag{
+		   position:absolute;
+		width:90px;height:200px;
+		background-color:#ef7d0d;
+		top:130px;
+		left:-75px;
+		z-index:-1;
+		border:25px solid #000;
+		border-radius:40% 0 0 40%/30%;
+		overflow:hidden;
+		}
+		
+		.bag::before{
+		content:' ';
+		position:absolute;
+		width:100px;height:80px;
+		background-color:#b33e15;
+		bottom:0;
+		border-radius:30% 70% 0 0/10% 50% 0 0;
+		}
+		
+		
+     /*gaundlet*/
+     
+            .main{
+                transform:rotate(0deg);
+                position:relative;
+                top:-70px;
+                left:-295px;
+            }
+            .base{
+                position:relative;
+                height:0px;
+                width:120px;
+                border-bottom:154px solid #000;
+                border-left:40px solid transparent;
+                border-right:40px solid transparent;
+                border-radius:100% 100% 20% 20%/40% 40% 20% 20%;
+            }
+            .base::before{
+                content:" ";
+                position:absolute;
+                height:0px;
+                width:120px;
+                top:-3px;
+                left:-25px;
+                border-bottom:150px solid #f8cb54;
+                border-left:25px solid transparent;
+                border-right:25px solid transparent;
+                border-radius:100% 100% 20% 20%/40% 40% 20% 20%;
+            }
+            .base::after{
+                content:" ";
+                position:absolute;
+                height:103px;
+                width:65px;
+                top:44px;
+                left:19px;
+                background-color:transparent;
+                border:10px solid #9a6c09;
+                border-top:none;
+                border-bottom:none;
+                border-radius:10% 10% 0 0/50% 50% 0 0;
+            }
+            .fist{
+                position:relative;
+                height:115px;
+                width:120px;
+                background-color:#f8cb54;
+                left:0px;
+                top:-70px;
+                border:5px solid #000;
+                border-radius:10% 10% 70% 70%/10% 10% 30% 30%;
+            }
+            .fist::after{
+                content:' ';
+                position:absolute;
+                height:0px;
+                width:40px;
+                border-top:1px solid #000;
+                border-bottom:29px solid #f8cb54;
+                border-left:15px solid transparent;
+                border-right:15px solid transparent;
+                top:90px;
+                left:25px;
+            }
+            .finger1{
+                position:relative;
+                height:25px;
+                width:25px;
+                background-color:#f8cb54;
+                border:5px solid #000;
+                border-radius:25% 25% 10% 10%;
+                top:-225px;
+                left:2px;
+            }
+            .finger2{
+                position:relative;
+                height:25px;
+                width:25px;
+                background-color:#f8cb54;
+                border-radius:25% 25% 10% 10%;
+                border:5px solid #000;
+                top:-261px;
+                left:32px;
+            }
+            .finger3{
+                position:relative;
+                height:25px;
+                width:25px;
+                background-color:#f8cb54;
+                border-radius:25% 25% 10% 10%;
+                border:5px solid #000;
+                top:-295px;
+                left:61px;
+            }
+            .finger4{
+                position:relative;
+                height:25px;
+                width:25px;
+                background-color:#f8cb54;
+                border-radius:25% 25% 10% 10%;
+                border:5px solid #000;
+                top:-329px;
+                left:91px;
+            }
+            .thumb{
+                position:relative;
+                height:50px;
+                width:25px;
+                background-color:#f8cb54;
+                border-radius:0% 30% 80% 0%/0% 20% 40% 0%;
+                border:5px solid #000;
+                top:-315px;
+                left:125px;
+            }
+            .stone1{
+                position:relative;
+                height:20px;
+                width:20px;
+                top:-377px;
+                left:5px;
+                border-radius:100%;
+                background-color:orange;
+                border:3px solid #9a6c09;
+                box-shadow:3px 3px 30px 0px orange;
+                animation:glow 1s infinite;
+            }
+            .stone2{
+                position:relative;
+                height:20px;
+                width:20px;
+                top:-408px;
+                left:34px;
+                border-radius:100%;
+                background-color:purple;
+                border:3px solid #9a6c09;
+                box-shadow:3px 3px 30px 0px purple;
+                animation glow:1s infinite;
+            }
+            .stone3{
+                position:relative;
+                height:20px;
+                width:20px;
+                top:-437px;
+                left:62px;
+                border-radius:100%;
+                background-color:cyan;
+                border:3px solid #9a6c09;
+                box-shadow:3px 3px 50px 10px #0ff;
+                animation:glow 1s infinite;
+            }
+            .stone4{
+                position:relative;
+                height:20px;
+                width:20px;
+                top:-459px;
+                left:90px;
+                border-radius:100%;
+                background-color:red;
+                border:3px solid #9a6c09;
+             box-shadow:3px 3px 50px 10px red;
+             animation:glow 1s infinite;
+            }
+            .stone5{
+                position:relative;
+                height:35px;
+                width:35px;
+                top:-445px;
+                left:40px;
+                border-radius:100%;
+                background-color:yellow;
+                border:5px solid #9a6c09;
+                box-shadow:3px 3px 50px 20px yellow;
+                animation:glow 1s infinite;
+            }
+            .stone6{
+                position:relative;
+                height:20px;
+                width:20px;
+                top:-510px;
+                left:133px;
+                border-radius:100%;
+                background-color:green;
+                border:3px solid #9a6c09;
+                box-shadow:3px 3px 50px 10px green;
+                animation:glow 1s infinite;
+            }
+            
+        .reflection{
+            position:relative;
+            height:15px;
+            width:8px;
+            background-color:white;
+            border-radius:60% 100% 100% 50%/100% 100% 100% 10%;
+            top:2px;
+            right:-10px;
+            animation-name:ShineStone;
+            animation-duration:1s;
+            animation-iteration-count:infinite;
+        }
+        .linereflection{
+            position:relative;
+            height:70px;
+            width:11px;
+            background-color:white;
+            border-radius:25%;
+            transform:rotate(0deg);
+            top:-90px;
+            left:80px;
+        }
+        
+        @keyframes ShineStone{
+            
+            0%{transform:rotate(0deg);}
+           /* 25%{transform:rotate(180deg);}*/
+            50%{transform:rotate(45deg);}
+            100%{transform:rotate(0deg);}
+        }
+        
+        @keyframes glow{
+            0%{box-shadow:3px 3px 0px 0px white;}
+50%{box-shadow:3px 3px 50px 10px white;}
+100%{box-shadow:3px 3px 0px 0px white;}
+        }
+        
+		
+</style>
+</head>
+<body>
+    
+    <!--Among us character-->
+         <div class="character">
+         	<div class="body"></div>
+            <div class="glass">
+            <div class="white-reflection"></div>
+             </div>
+             <div class="hand"></div>
+            <div class="legs">
+            <div class="left-leg"></div>
+             <div class="right-leg"></div>
+            </div>
+            <div class="bag"></div>
+        </div>
+        
+    <!--Gaundlet-->
+    
+        <div class="main">
+        <div class="base">
+            <div class="rectreflection"></div>
+            <div class="fist"></div>
+            <div class="finger1"></div>
+            <div class="finger2"></div>
+            <div class="finger3"></div>
+            <div class="finger4"></div>
+            <div class="thumb"></div>
+            <div class="stone1">
+                <div class="reflection"></div>
+            </div>
+            <div class="stone2">
+                <div class="reflection"></div>
+            </div>
+            <div class="stone3">
+                <div class="reflection"></div>
+            </div>
+            <div class="stone4">
+                <div class="reflection"></div>
+            </div>
+            <div class="stone5">
+            </div>
+            <div class="stone6">
+                <div class="reflection"></div>
+            </div>
+        </div>
+        <div class="linereflection"></div>
+        </div>
+       
+       
+        
+        
+</body>
+</html>
