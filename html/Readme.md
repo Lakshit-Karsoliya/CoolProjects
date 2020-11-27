@@ -2,4 +2,4 @@
  
    ![Alt Text](assets/AmongUs.gif) 
   
-  <h3>:-)</h3>
+  <h3>amongus.html file contain the above animatiin in html and css</h3>
